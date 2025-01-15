@@ -15,7 +15,7 @@ CryptoExplorer is a powerful web application designed to interact with cryptocur
 - Node.js (Version: ^18.0.0)
 
 ### **API:**
-- [CoinStats API](https://apidocs.coin-stats.com/)
+- [CoinStats API](https://docs.api.coinstats.app/reference/market-data)
 
 ### **Authentication:**
 - API Key (CoinStats API Authentication)
