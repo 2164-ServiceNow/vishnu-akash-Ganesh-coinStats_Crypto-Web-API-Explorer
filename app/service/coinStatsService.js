@@ -3,7 +3,7 @@ app.service('coinStatsService', function($http) {
         const options = {
             headers: {
                 'accept': 'application/json',
-                'X-API-KEY': '30nE9ahS0gb+DQO1SMROT6DNt30G44/eceiasWiYr/g='
+                'X-API-KEY': 'add key here bro...'
             }
         };
 
