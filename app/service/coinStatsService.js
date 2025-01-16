@@ -11,8 +11,9 @@ app.service('coinStatsService', function($http) {
         return $http.get('https://openapiv1.coinstats.app/coins', options)
             .then(function(response) {
                 console.log('API Response:', response); // Log the full response to see its structure
-                // Return the coins array
-                return response.data.coins || [];  // Ensure it defaults to an empty array if no coins are present
+                console.log("Full API Response:", JSON.stringify(response.data, null, 2)); //New log statement here
+                const coins = response.data.result || []; //Access coins correctly based on what you see in the new log
+                return coins;
             })
             .catch(function(error) {
                 console.error('Error fetching coin data:', error);

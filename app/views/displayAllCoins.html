@@ -1,6 +1,5 @@
 <div>
     <h1>All Coins</h1>
-
     <table border="1">
         <thead>
             <tr>
@@ -8,6 +7,7 @@
                 <th>Name</th>
                 <th>Symbol</th>
                 <th>Price</th>
+                <th>Inspect</th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +16,7 @@
                 <td>{{ coin.name }}</td>
                 <td>{{ coin.symbol }}</td>
                 <td>{{ coin.price | currency }}</td>
+                <td><button ng-click="console.log(coin)">Inspect Coin</button></td>
             </tr>
         </tbody>
     </table>
