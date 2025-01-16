@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html ng-app="CryptoTrader">
+<html ng-app="CryptoTrader" lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto App</title>
+    <!-- Add a base tag for HTML5 mode -->
+    <base href="/">
+    <!-- AngularJS Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
-
-   
 </head>
 <body>
     <!-- View container for routing -->
     <div ng-view></div>
 
-     <!-- App Scripts -->
-     <script src="app/app.js"></script>
-     <script src="app/controller/mainController.js"></script>
-     <script src="app/controller/portfolioController.js"></script>
-     <script src="app/service/coinStatsService.js"></script>
+    <!-- Application Scripts -->
+    <script src="app/app.js"></script>
+    <script src="app/controller/mainController.js"></script>
+    <script src="app/controller/displayAllCoins.js"></script>
+    <script src="app/service/coinStatsService.js"></script>
 </body>
 </html>
