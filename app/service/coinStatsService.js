@@ -3,7 +3,7 @@ app.service('coinStatsService', function($http) {
         const options = {
             headers: {
                 'accept': 'application/json',
-                'X-API-KEY': 'add key here bro...'
+                'X-API-KEY': '30nE9ahS0gb+DQO1SMROT6DNt30G44/eceiasWiYr/g='
             }
         };
 
@@ -12,7 +12,7 @@ app.service('coinStatsService', function($http) {
             .then(function(response) {
                 console.log('API Response:', response); // Log the full response to see its structure
                 // Return the coins array
-                return response.data.coins || [];  // Ensure it defaults to an empty array if no coins are present
+                return response.data.result || [];  // Ensure it defaults to an empty array if no coins are present
             })
             .catch(function(error) {
                 console.error('Error fetching coin data:', error);
