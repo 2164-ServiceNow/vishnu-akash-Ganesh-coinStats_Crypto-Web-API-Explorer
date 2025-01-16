@@ -7,7 +7,7 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'app/views/home.html',
             controller: 'mainController'
         })
-        .when('/portfolio', {
+        .when('/coins', {
             templateUrl: 'app/views/displayAllCoins.html',
             controller: 'displayAllCoins'
         })

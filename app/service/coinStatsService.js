@@ -10,9 +10,11 @@ app.service('coinStatsService', function($http) {
         // Return the result of the $http.get method
         return $http.get('https://openapiv1.coinstats.app/coins', options)
             .then(function(response) {
-                console.log('API Response:', response); // Log the full response to see its structure
+                // Log the full response to see its structure
+                console.log('API Response:', response); 
                 console.log("Full API Response:", JSON.stringify(response.data, null, 2)); //New log statement here
-                const coins = response.data.result || []; //Access coins correctly based on what you see in the new log
+                //Access coins correctly based on what you see in the new log
+                const coins = response.data.result || []; 
                 return coins;
             })
             .catch(function(error) {
