@@ -1,0 +1,29 @@
+<div>
+    <h1>All Coins</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="coin in displayedCoins">
+                <td>{{ coin.rank }}</td>
+                <td>{{ coin.name }}</td>
+                <td>{{ coin.symbol }}</td>
+                <td>{{ coin.price | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <button ng-click="prevPage()" ng-disabled="currentPage === 1">Previous</button>
+        <button ng-click="nextPage()" ng-disabled="currentPage * itemsPerPage >= coins.length">Next</button>
+    </div>
+
+    <p>Page {{ currentPage }}</p>
+</div>
