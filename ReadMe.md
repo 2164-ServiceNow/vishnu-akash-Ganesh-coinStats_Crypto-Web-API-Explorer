@@ -79,6 +79,6 @@ CryptoExplorer is a powerful web application designed to interact with cryptocur
 
 ### ** Collaborators:**   
 
-   - Akash
-   - Siva Ganesh
-   - Kumpati Vishnu Vardhan
+   - akash3701
+   - sivaganesh191988
+   - vishnukumpati
