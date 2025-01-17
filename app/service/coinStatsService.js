@@ -12,11 +12,11 @@ app.service('coinStatsService', function($http) {
             .then(function(response) {
                 console.log('API Response:', response); // Log the full response to see its structure
                 // Return the coins array
-                return response.data.coins || [];  // Ensure it defaults to an empty array if no coins are present
+                return response.data.result || []; 
             })
             .catch(function(error) {
                 console.error('Error fetching coin data:', error);
-                return [];  // Return an empty array in case of an error
+                return []; 
             });
     };
 });
