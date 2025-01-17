@@ -1,0 +1,74 @@
+/* Full-screen background with reduced brightness */
+body {
+    background-image: url('../images/home1.jpg'); /* Ensure this path matches your project */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(70%); /* Slightly dim the image */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navigation bar styling */
+.navbar {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(34, 193, 195, 0.8)); /* Gradient effect */
+    z-index: 10;
+    position: relative;
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+    font-weight: bold;
+    text-transform: uppercase; /* Make text stand out */
+}
+
+.nav-link:hover {
+    color: #FFD700 !important; /* Gold hover effect */
+}
+
+/* Hero section styling */
+.hero-section {
+    display: flex;
+    justify-content: flex-start; /* Align text towards the left */
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding: 0 4rem; /* Add horizontal padding for indentation */
+}
+
+.hero-text {
+    max-width: 600px; /* Limit text block width */
+    text-align: left; /* Align text to the left */
+}
+
+.hero-title {
+    font-size: 3.5rem; /* Larger title size */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #d7d3db; /* Darker color for the title */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Subtle shadow for contrast */
+}
+
+.hero-description {
+    font-size: 1.4rem; /* Elegant size for the description */
+    color: #f5f5f5; /* Light color for the text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    margin-bottom: 2rem; /* Add spacing below */
+}
+
+.btn-custom {
+    background-color: #FFD700; /* Gold button */
+    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Subtle shadow */
+}
+
+.btn-custom:hover {
+    background-color: #ffa500; /* Orange hover effect */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6); /* Highlight hover */
+}
+
