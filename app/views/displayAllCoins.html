@@ -26,4 +26,23 @@
     </div>
 
     <p>Page {{ currentPage }}</p>
+
+
+
+    <div ng-controller="searchBarController">
+        <h1>Crypto Search</h1>
+        <input type="text" ng-model="searchQuery" placeholder="Enter Coin ID" />
+        <button ng-click="searchCoin()">Search</button>
+
+        <div ng-if="error" style="color: red;">
+            {{ error }}
+        </div>
+
+        <div ng-if="coinData">
+            <h2>Coin Details:</h2>
+            <p><strong>Name:</strong> {{ coinData.name }}</p>
+            <p><strong>Symbol:</strong> {{ coinData.symbol }}</p>
+            <p><strong>Price:</strong> ${{ coinData.price }}</p>
+        </div>
+    </div>
 </div>
