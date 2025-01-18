@@ -1,49 +1,73 @@
-<div>
-    <h1>All Coins</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Symbol</th>
-                <th>Price</th>
-                <th>Inspect</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="coin in displayedCoins">
-                <td>{{ coin.rank }}</td>
-                <td>{{ coin.name }}</td>
-                <td>{{ coin.symbol }}</td>
-                <td>{{ coin.price | currency }}</td>
-                <td><button ng-click="console.log(coin)">Inspect Coin</button></td>
-            </tr>
-        </tbody>
-    </table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Explorer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="app/assets/cssFiles/displayAllCoins.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- All Coins Section (Left) -->
+        <div class="all-coins-container">
+            <h1 class="text-center mb-4">All Coins</h1>
+            <div class="table-container">
+                <table class="table table-bordered table-hover mx-auto">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Symbol</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="coin in displayedCoins">
+                            <td>{{ coin.rank }}</td>
+                            <td class="coin-name" ng-mouseover="showCoinId = true" ng-mouseleave="showCoinId = false">
+            {{ coin.name }}
+            <span class="coin-id" ng-if="showCoinId">ID: {{ coin.id }}</span>
+        </td>
+                            <td>{{ coin.symbol }}</td>
+                            <td>{{ coin.price | currency }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <div>
-        <button ng-click="prevPage()" ng-disabled="currentPage === 1">Previous</button>
-        <button ng-click="nextPage()" ng-disabled="currentPage * itemsPerPage >= coins.length">Next</button>
-    </div>
-
-    <p>Page {{ currentPage }}</p>
-
-
-
-    <div ng-controller="searchBarController">
-        <h1>Crypto Search</h1>
-        <input type="text" ng-model="searchQuery" placeholder="Enter Coin ID" />
-        <button ng-click="searchCoin()">Search</button>
-
-        <div ng-if="error" style="color: red;">
-            {{ error }}
+            <!-- Pagination -->
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <button class="btn btn-secondary" ng-click="prevPage()" ng-disabled="currentPage === 1">Previous</button>
+                <p class="mb-0">Page {{ currentPage }}</p>
+                <button class="btn btn-secondary" ng-click="nextPage()" ng-disabled="currentPage * itemsPerPage >= coins.length">Next</button>
+            </div>
         </div>
 
-        <div ng-if="coinData">
-            <h2>Coin Details:</h2>
-            <p><strong>Name:</strong> {{ coinData.name }}</p>
-            <p><strong>Symbol:</strong> {{ coinData.symbol }}</p>
-            <p><strong>Price:</strong> ${{ coinData.price }}</p>
+        <!-- Search Coin Section (Right) -->
+        <div class="search-container" ng-controller="searchBarController">
+            <h1 class="text-center mb-4">Search Coin</h1>
+            <div class="mb-3">
+                <input type="text" class="form-control" ng-model="searchQuery" placeholder="Enter Coin ID" />
+            </div>
+            <button class="btn btn-success w-100" ng-click="searchCoin()">Search</button>
+            <div ng-if="error" class="text-danger mt-3">
+                {{ error }}
+            </div>
+            <div ng-if="coinData" class="card mt-4">
+                <div class="card-body">
+                    <h2 class="card-title">Coin Details:</h2>
+                    <p class="card-text"><strong>Name:</strong> {{ coinData.name }}</p>
+                    <p class="card-text"><strong>Symbol:</strong> {{ coinData.symbol }}</p>
+                    <p class="card-text"><strong>Price:</strong> ${{ coinData.price }}</p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

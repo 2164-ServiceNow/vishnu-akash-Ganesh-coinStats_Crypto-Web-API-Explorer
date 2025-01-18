@@ -1,0 +1,171 @@
+/* General styling */
+body {
+    background-image: url('../images/home2.jpg'); /* Ensure this path matches your project */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light background for contrast */
+    color: #333; /* Darker text for better readability */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+/* Main container for layout */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 30px auto;
+    max-width: 1200px; /* Prevents the content from stretching too wide */
+    gap: 30px; /* Space between sections */
+}
+
+/* All Coins Section (Left) */
+.all-coins-container {
+    width: 60%; /* Occupies 60% of the page width */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease; /* Smooth transition */
+    overflow: hidden;
+}
+
+/* Hover effect for the left section */
+.all-coins-container:hover {
+    transform: translateY(-5px); /* Slight lifting effect */
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+}
+
+/* Search Coin Section (Right) */
+.search-container {
+    width: 35%; /* Occupies 35% of the page width */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgb(253, 251, 251);
+    position: sticky;
+    top: 30px;
+    height: fit-content;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.search-container:hover {
+    transform: translateY(-5px); /* Slight lifting effect */
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+}
+
+/* Table styling */
+.table-container {
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for the background */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the rounded corners show even if content overflows */
+    transition: background-color 0.3s ease;
+}
+
+/* Zebra striping for table rows */
+.table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.05); /* Light striping for better readability */
+}
+
+.table th, .table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly opaque background */
+    font-size: 16px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for table rows */
+.table tr:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Slight hover effect for rows */
+}
+
+/* Table headings */
+.table th {
+    font-weight: bold;
+    color: #090909;
+    text-transform: uppercase; /* Make headings stand out */
+}
+
+/* Styling for the Coin Name */
+.coin-name {
+    position: relative;
+    cursor: pointer; /* Makes it obvious it's interactable */
+}
+
+/* Hidden Coin ID by default */
+.coin-id {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Positioning the ID next to the coin name */
+    margin-left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show Coin ID when hovering over the name */
+.coin-name:hover .coin-id {
+    display: inline-block;
+    opacity: 1; /* Make the ID visible on hover */
+}
+
+/* Input & button styling */
+input[type="text"], button {
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Stack sections vertically on small screens */
+        gap: 20px;
+    }
+
+    .all-coins-container, .search-container {
+        width: 100%; /* Full width for both sections */
+        padding: 20px; /* Adjust padding on smaller screens */
+    }
+
+    .table th, .table td {
+        padding: 12px; /* Adjust table cell padding for smaller screens */
+        font-size: 14px; /* Slightly smaller font size for mobile */
+    }
+
+    /* Adjust input and button styles on smaller screens */
+    input[type="text"], button {
+        width: 100%; /* Full-width inputs and buttons on mobile */
+        font-size: 14px;
+    }
+}
+
+/* Add subtle animations to title and sections */
+h1, h2, h3 {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for better contrast */
+    transition: all 0.3s ease;
+}
+
+h1:hover, h2:hover, h3:hover {
+    color: #4CAF50; /* Green color on hover */
+}
