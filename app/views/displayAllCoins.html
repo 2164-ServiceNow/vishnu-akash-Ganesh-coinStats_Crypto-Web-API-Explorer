@@ -56,7 +56,7 @@
 
             <!-- Search Bar with Icon -->
             <div class="input-group mb-3">
-                <input type="text" class="form-control" ng-model="searchQuery" placeholder="Enter Coin ID" ng-keypress="checkEnter($event)" />
+                <input type="text" class="form-control" ng-model="searchQuery" placeholder="Enter Coin ID" ng-keydown="checkEnter($event)" />
                 <button class="btn btn-outline-secondary" ng-click="searchCoin()">
                     <i class="fas fa-search"></i>
                 </button>
@@ -73,6 +73,11 @@
                     <p class="card-text"><strong>Name:</strong> {{ coinData.name }}</p>
                     <p class="card-text"><strong>Symbol:</strong> {{ coinData.symbol }}</p>
                     <p class="card-text"><strong>Price:</strong> ${{ coinData.price }}</p>
+
+                    <!-- Fun message before average price buttons -->
+                    <div class="alert alert-warning mt-3">
+                        <strong>Get ready for some price magic!</strong> Choose your time range and see the average price.
+                    </div>
 
                     <!-- Buttons for fetching average prices -->
                     <div class="mt-3">
@@ -111,13 +116,44 @@
             format: 'mm/dd/yyyy',
             startDate: '-3d'
         });
-        
-        // Check if Enter is pressed in the search input
+
+        // Search functionality for Enter key and button click
         angular.module('cryptoApp').controller('searchBarController', function($scope) {
+            // Check for Enter key press
             $scope.checkEnter = function(event) {
                 if (event.key === 'Enter') {
                     $scope.searchCoin();
                 }
+            };
+
+            // Function to handle search click and enter key
+            $scope.searchCoin = function() {
+                // Assuming `searchQuery` is a model bound to the search bar input field
+                if ($scope.searchQuery && $scope.searchQuery.length > 0) {
+                    // Here, you would call the actual API to search based on the coin ID
+                    console.log("Searching for coin with ID:", $scope.searchQuery);
+                    // For now, just simulate a successful search result
+                    // Replace with your actual search logic
+                    $scope.coinData = {
+                        name: "Bitcoin",
+                        symbol: "BTC",
+                        price: "45000"
+                    };
+                    $scope.error = '';  // Clear error message if valid query is entered
+                } else {
+                    $scope.error = "Please enter a valid coin ID.";
+                }
+            };
+
+            // Get the average price based on the selected range
+            $scope.getAveragePrice = function(range) {
+                console.log("Fetching average price for range:", range);
+                // For demo purposes, we simulate an average price response
+                $scope.averagePriceData = {
+                    coinId: $scope.searchQuery,
+                    price: (Math.random() * 1000 + 1000).toFixed(2), // Random price for demo
+                    timestamp: new Date()
+                };
             };
         });
     </script>
