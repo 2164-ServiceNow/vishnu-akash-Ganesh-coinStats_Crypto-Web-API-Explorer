@@ -24,37 +24,20 @@ body {
 
 /* All Coins Section (Left) */
 .all-coins-container {
-    width: 75%; /* Occupies 75% of the page width */
+    width: 60%; /* Decreased size of the coins list */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
-    padding: 30px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease; /* Smooth transition */
-    overflow: hidden;
-}
-
-/* Hover effect for the left section */
-.all-coins-container:hover {
-    transform: translateY(-5px); /* Slight lifting effect */
-    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
 }
 
 /* Search Coin Section (Right) */
 .search-container {
-    width: 25%; /* Occupies 25% of the page width */
+    width: 35%; /* Increased the search container size */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0px 6px 15px rgb(253, 251, 251);
-    position: sticky;
-    top: 30px;
-    height: fit-content;
-    transition: all 0.3s ease; /* Smooth transition */
-}
-
-.search-container:hover {
-    transform: translateY(-5px); /* Slight lifting effect */
-    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
 }
 
 /* Table styling */
@@ -68,43 +51,21 @@ body {
     background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for the background */
     border-radius: 8px;
     overflow: hidden; /* Ensures the rounded corners show even if content overflows */
-    transition: background-color 0.3s ease;
-}
-
-/* Zebra striping for table rows */
-.table tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.05); /* Light striping for better readability */
-}
-
-.table th, .table td {
-    padding: 15px;
-    border: 1px solid #ddd;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly opaque background */
-    font-size: 16px;
-    line-height: 1.6;
-    transition: background-color 0.3s ease;
-}
-
-/* Hover effect for table rows */
-.table tr:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Slight hover effect for rows */
 }
 
 /* Table headings */
-.table th {
-    font-weight: bold;
-    color: #090909;
-    text-transform: uppercase; /* Make headings stand out */
+.table th, .table td {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
 }
 
-/* Styling for the Coin Name */
+/* Coin Name hover effect */
 .coin-name {
     position: relative;
-    cursor: pointer; /* Makes it obvious it's interactable */
+    cursor: pointer;
 }
 
-/* Hidden Coin ID by default */
 .coin-id {
     display: none;
     position: absolute;
@@ -116,46 +77,48 @@ body {
     padding: 5px;
     border-radius: 5px;
     font-size: 14px;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
-/* Show Coin ID when hovering over the name */
 .coin-name:hover .coin-id {
     display: inline-block;
-    opacity: 1; /* Make the ID visible on hover */
+    opacity: 1;
 }
 
-/* Input & button styling */
-input[type="text"], button {
-    padding: 12px 18px;
+/* Search Bar Styling */
+.input-group .form-control {
+    border-radius: 8px 0 0 8px; /* Rounded left side */
     font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    transition: all 0.3s ease;
+}
+
+.input-group button {
+    border-radius: 0 8px 8px 0; /* Rounded right side */
+    font-size: 16px;
+}
+
+/* Average price button styles */
+button.btn-sm {
+    font-size: 12px;
+    padding: 8px 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-container {
-        flex-direction: column; /* Stack sections vertically on small screens */
-        gap: 20px;
+        flex-direction: column;
     }
 
     .all-coins-container, .search-container {
-        width: 100%; /* Full width for both sections */
-        padding: 20px; /* Adjust padding on smaller screens */
+        width: 100%;
+        padding: 20px;
     }
 
-    .table th, .table td {
-        padding: 12px; /* Adjust table cell padding for smaller screens */
-        font-size: 14px; /* Slightly smaller font size for mobile */
-    }
-
-    /* Adjust input and button styles on smaller screens */
-    input[type="text"], button {
-        width: 100%; /* Full-width inputs and buttons on mobile */
+    .input-group .form-control {
         font-size: 14px;
+    }
+
+    button.btn-sm {
+        font-size: 12px;
     }
 }
