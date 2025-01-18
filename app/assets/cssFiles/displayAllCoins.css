@@ -24,7 +24,7 @@ body {
 
 /* All Coins Section (Left) */
 .all-coins-container {
-    width: 60%; /* Occupies 60% of the page width */
+    width: 75%; /* Occupies 75% of the page width */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
     padding: 30px;
     border-radius: 12px;
@@ -41,7 +41,7 @@ body {
 
 /* Search Coin Section (Right) */
 .search-container {
-    width: 35%; /* Occupies 35% of the page width */
+    width: 25%; /* Occupies 25% of the page width */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
     padding: 30px;
     border-radius: 12px;
@@ -158,14 +158,4 @@ input[type="text"], button {
         width: 100%; /* Full-width inputs and buttons on mobile */
         font-size: 14px;
     }
-}
-
-/* Add subtle animations to title and sections */
-h1, h2, h3 {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for better contrast */
-    transition: all 0.3s ease;
-}
-
-h1:hover, h2:hover, h3:hover {
-    color: #4CAF50; /* Green color on hover */
 }
