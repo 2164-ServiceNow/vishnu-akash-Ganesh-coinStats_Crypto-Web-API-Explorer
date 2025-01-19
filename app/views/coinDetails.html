@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app/assets/cssFiles/coinDetails.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">Coin Details</h1>
+    </header>
+
+    <main class="content" ng-controller="coinDetailsController">
+        <!-- Loading Spinner -->
+        <div ng-if="loading" class="loading">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div ng-if="error" class="error">
+            {{ error }}
+        </div>
+
+        <!-- Coin Details -->
+        <section ng-if="coinDetails" class="coin-details">
+            <!-- Header Section -->
+            <div class="coin-header">
+                <img ng-src="{{ coinDetails.icon }}" alt="{{ coinDetails.name }} Icon" class="coin-icon">
+                <div class="coin-info">
+                    <h2>{{ coinDetails.name }} ({{ coinDetails.symbol }})</h2>
+                    <p>Rank: #{{ coinDetails.rank }}</p>
+                </div>
+            </div>
+
+            <!-- Main Information -->
+            <div class="info-section">
+                <div class="info-block">
+                    <h3>Market Information</h3>
+                    <p><strong>Current Price:</strong> ${{ coinDetails.price | number:2 }}</p>
+                    <p><strong>Price (BTC):</strong> {{ coinDetails.priceBtc }}</p>
+                    <p><strong>Market Cap:</strong> ${{ coinDetails.marketCap | number }}</p>
+                    <p><strong>Fully Diluted Valuation:</strong> ${{ coinDetails.fullyDilutedValuation | number }}</p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Supply Details</h3>
+                    <p><strong>Total Supply:</strong> {{ coinDetails.totalSupply | number }}</p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Price Changes</h3>
+                    <p><strong>1 Hour:</strong> {{ coinDetails.priceChange1h }}%</p>
+                    <p><strong>1 Day:</strong> {{ coinDetails.priceChange1d }}%</p>
+                    <p><strong>1 Week:</strong> {{ coinDetails.priceChange1w }}%</p>
+                </div>
+            </div>
+
+            <!-- Links Section -->
+            <div class="links">
+                <a ng-href="{{ coinDetails.websiteUrl }}" target="_blank" class="link">Website</a>
+                <a ng-href="{{ coinDetails.redditUrl }}" target="_blank" class="link">Reddit</a>
+                <a ng-href="{{ coinDetails.twitterUrl }}" target="_blank" class="link">Twitter</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -11,6 +11,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'app/views/displayAllCoins.html',
             controller: 'displayAllCoins'
         })
+        .when('/coinDetails/:coinId', {
+            templateUrl: 'app/views/coinDetails.html',
+            controller: 'coinDetailsController'
+        })
         .otherwise({
             redirectTo: '/' // Redirect to home for invalid routes
         });
