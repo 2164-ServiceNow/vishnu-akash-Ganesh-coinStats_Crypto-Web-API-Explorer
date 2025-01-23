@@ -11,6 +11,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'app/views/displayAllCoins.html',
             controller: 'displayAllCoins'
         })
+        .when('/news', {
+            templateUrl: 'app/views/news.html',
+            controller: 'newsController'
+        })
         .when('/nft', {
             templateUrl: 'app/views/displayNFTs.html',
             controller: 'nftTrendingController'
@@ -18,6 +22,10 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/coinDetails/:coinId', {
             templateUrl: 'app/views/coinDetails.html',
             controller: 'coinDetailsController'
+        })
+        .when('/exchanges', {
+            templateUrl: 'app/views/coinTickersExchange.html',
+            controller: 'coinTickersExchange'  // Ensure the correct controller
         })
         .otherwise({
             redirectTo: '/' // Redirect to home for invalid routes
