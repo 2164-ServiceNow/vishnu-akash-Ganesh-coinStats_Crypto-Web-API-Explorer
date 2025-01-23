@@ -11,9 +11,17 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'app/views/displayAllCoins.html',
             controller: 'displayAllCoins'
         })
+        .when('/nft', {
+            templateUrl: 'app/views/displayNFTs.html',
+            controller: 'nftTrendingController'
+        })
         .when('/coinDetails/:coinId', {
             templateUrl: 'app/views/coinDetails.html',
             controller: 'coinDetailsController'
+        })
+        .when('/currency', {
+            templateUrl: 'app/views/currency.html',
+            controller: 'coinCurrenciesController'
         })
         .otherwise({
             redirectTo: '/' // Redirect to home for invalid routes
