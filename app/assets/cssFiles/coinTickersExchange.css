@@ -2,6 +2,9 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
+    background-image: url('../images/home2.jpg'); /* Ensure the path matches your project */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Container Styling */

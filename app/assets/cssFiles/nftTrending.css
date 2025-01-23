@@ -1,6 +1,7 @@
 /* General Styles */
 body {
     background-color: #f4f7fc;
+    background-image: url('../images/home2.jpg'); /* Ensure the path matches your project */
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
