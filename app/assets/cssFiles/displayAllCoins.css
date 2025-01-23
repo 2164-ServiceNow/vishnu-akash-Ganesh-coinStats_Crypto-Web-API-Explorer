@@ -35,9 +35,8 @@ body {
 .search-container {
     width: 35%; /* Increased the search container size */
     background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0px 6px 15px rgb(253, 251, 251);
+    padding: 12px;
+    border-radius: 19px;
 }
 
 /* Table styling */
@@ -106,13 +105,13 @@ button.btn-sm {
 /* Fiat Currencies Section */
 .fiat-currency-container {
     width: 31.5%;
-    background-color: rgba(255, 255, 255, 0.9); /* Light background with transparency */
-    padding: 30px; /* Padding inside the section */
-    border-radius: 12px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px; 
+    border-radius: 12px; 
     position: absolute;
-    bottom: -10%; 
-    right: 65px; /* Align it to the right of the parent container */
-    margin: 20px; /* Add spacing from the edges */
+    bottom: -19%; 
+    right: 65px;
+    margin: 20px;
 }
 
 /* Currency selection inputs */
