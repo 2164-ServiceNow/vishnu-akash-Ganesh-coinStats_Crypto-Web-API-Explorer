@@ -12,7 +12,7 @@ app.service('coinTickersExchangeService', function($http) {
         return $http.get('https://openapiv1.coinstats.app/tickers/exchanges', options)
             .then(function(response) {
                 console.log('TickersExchange:', response); // Log the response to see its structure
-                return response.data.result || []; // Return the list of exchanges or an empty array in case of an error
+                return response.data || []; // Return the list of exchanges or an empty array in case of an error
             })
             .catch(function(error) {
                 console.error('Error fetching exchange data:', error);
