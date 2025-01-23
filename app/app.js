@@ -19,10 +19,6 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'app/views/coinDetails.html',
             controller: 'coinDetailsController'
         })
-        .when('/currency', {
-            templateUrl: 'app/views/currency.html',
-            controller: 'coinCurrenciesController'
-        })
         .otherwise({
             redirectTo: '/' // Redirect to home for invalid routes
         });

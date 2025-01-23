@@ -103,22 +103,42 @@ button.btn-sm {
     margin-bottom: 10px;
 }
 
-/* Responsive Design */
+/* Fiat Currencies Section */
+.fiat-currency-container {
+    width: 31.5%;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background with transparency */
+    padding: 30px; /* Padding inside the section */
+    border-radius: 12px; /* Rounded corners */
+    position: absolute;
+    bottom: -10%; 
+    right: 65px; /* Align it to the right of the parent container */
+    margin: 20px; /* Add spacing from the edges */
+}
+
+/* Currency selection inputs */
+.fiat-currency-container select {
+    font-size: 14px; 
+    padding: 5px 10px;
+    border-radius: 6px; 
+    border: 1px solid #ccc; 
+    margin-bottom: 5px;
+}
+
+/* Currency exchange rates display */
+.fiat-currency-container ul.list-group {
+    margin-top: 15px; /* Space above the rates list */
+}
+
+.fiat-currency-container ul.list-group li {
+    font-size: 14px; /* Adjust font size for rates */
+    padding: 8px; /* Add padding inside list items */
+}
+
+/* Adjust for responsiveness */
 @media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-    }
-
-    .all-coins-container, .search-container {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .input-group .form-control {
-        font-size: 14px;
-    }
-
-    button.btn-sm {
-        font-size: 12px;
+    .fiat-currency-container {
+        position: static; /* Make it flow naturally in smaller viewports */
+        margin-top: 20px; /* Add space above the section */
+        width: 100%; /* Full width on smaller devices */
     }
 }
