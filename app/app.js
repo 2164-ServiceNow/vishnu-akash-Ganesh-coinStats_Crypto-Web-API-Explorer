@@ -11,6 +11,10 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'app/views/displayAllCoins.html',
             controller: 'displayAllCoins'
         })
+        .when('/news', {
+            templateUrl: 'app/views/news.html', 
+            controller: 'newsController'
+        })
         .when('/nft', {
             templateUrl: 'app/views/displayNFTs.html',
             controller: 'nftTrendingController'
