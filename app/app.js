@@ -25,7 +25,7 @@ app.config(function ($routeProvider, $locationProvider) {
         })
         .when('/exchanges', {
             templateUrl: 'app/views/coinTickersExchange.html',
-            controller: 'coinTickersExchange'  // Ensure the correct controller
+            controller: 'coinTickersExchange' 
         })
         .otherwise({
             redirectTo: '/' // Redirect to home for invalid routes

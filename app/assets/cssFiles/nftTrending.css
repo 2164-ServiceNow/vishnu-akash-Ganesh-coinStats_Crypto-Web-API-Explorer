@@ -1,7 +1,6 @@
-/* General Styles */
 body {
     background-color: #f4f7fc;
-    background-image: url('../images/home2.jpg'); /* Ensure the path matches your project */
+    background-image: url('../images/home2.jpg'); 
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -11,7 +10,7 @@ body {
 /* Full-Width Container */
 .container {
     width: 100%;
-    max-width: 100%; /* Utilize the full page width */
+    max-width: 100%; 
     padding: 20px 40px;
     margin: auto;
 }
@@ -111,26 +110,26 @@ h1 {
 
 /* Card Column (3 cards per row on larger screens) */
 .col-md-4 {
-    flex: 0 0 calc(33.333% - 20px); /* 33.33% width for 3 cards with gap */
+    flex: 0 0 calc(33.333% - 20px);
     max-width: calc(33.333% - 20px);
     box-sizing: border-box;
 }
 
 @media (max-width: 992px) {
     .col-md-4 {
-        flex: 0 0 calc(50% - 20px); /* 2 cards per row on medium screens */
+        flex: 0 0 calc(50% - 20px); 
         max-width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 576px) {
     .col-md-4 {
-        flex: 0 0 100%; /* 1 card per row on small screens */
+        flex: 0 0 100%;
         max-width: 100%;
     }
 }
 
-/* Footer (optional if you add one) */
+/* Footer */
 footer {
     background-color: #1e293b;
     color: #ffffff;

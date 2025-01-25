@@ -1,9 +1,8 @@
 app.service('searchBarService', ['$http', function($http) {
-    // HTTP options, including headers
     const options = {
         headers: {
             'accept': 'application/json',
-            'X-API-KEY': '30nE9ahS0gb+DQO1SMROT6DNt30G44/eceiasWiYr/g=' // Add your API key here
+            'X-API-KEY': '30nE9ahS0gb+DQO1SMROT6DNt30G44/eceiasWiYr/g='
         }
     };
 

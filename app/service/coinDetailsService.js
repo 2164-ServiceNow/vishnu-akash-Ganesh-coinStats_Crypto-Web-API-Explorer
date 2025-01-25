@@ -9,7 +9,7 @@ app.service('coinDetailsService', function ($http) {
 
         return $http.get(`https://openapiv1.coinstats.app/coins/${coinId}`, options)
             .then(function (response) {
-                console.log('Coin Details Response:', response); // Debug API response
+                console.log('Coin Details Response:', response); 
                 return response.data;
             })
             .catch(function (error) {

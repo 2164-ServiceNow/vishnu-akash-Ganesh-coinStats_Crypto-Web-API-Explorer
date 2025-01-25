@@ -1,32 +1,36 @@
 app.controller('searchBarController', ['$scope', '$timeout', 'searchBarService', function($scope, $timeout, searchBarService) {
-    $scope.searchQuery = '';                // Store user input (coin ID)
-    $scope.coinData = null;                 // Store the result for the coin details
-    $scope.averagePriceData = null;         // Store the result for the average price
-    $scope.error = null;                    // Error message
+    $scope.searchQuery = '';                
+    $scope.coinData = null;                 
+    $scope.averagePriceData = null;         
+    $scope.error = null;                    
 
-    // Function to search for a coin (without fetching average price automatically)
+    // Function to search for a coin
     $scope.searchCoin = function() {
         if ($scope.searchQuery) {
             // Get coin details
             searchBarService.getCoinById($scope.searchQuery)
                 .then(function(data) {
-                    $timeout(function() {
+                    if (data) {
                         $scope.coinData = data;
                         $scope.averagePriceData = null;
                         $scope.error = null;
-                    });
-                })
-                .catch(function() {
-                    $timeout(function() {
-                        $scope.error = 'Coin not found. Please try a different ID.';
+                    } else {
+                        $scope.error = 'Hey! check the id in table again. Spell it properly';
                         $scope.coinData = null;
                         $scope.averagePriceData = null;
-                    });
+                    }
+                })
+                .catch(function() {
+                    $scope.error = 'Hey! check the id in table again. Spell it properly';
+                    $scope.coinData = null;
+                    $scope.averagePriceData = null;
                 });
         } else {
-            $scope.error = 'Please enter a coin ID.';
+            $scope.error = 'Check the coin id in table';
+            $scope.coinData = null;
+            $scope.averagePriceData = null;
         }
-    };
+    };    
 
     // Function to fetch average price for the coin over different time periods (1w, 1m, 6m, 1y)
     $scope.getAveragePrice = function(timePeriod) {
